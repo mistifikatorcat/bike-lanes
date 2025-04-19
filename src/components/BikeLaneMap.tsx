@@ -10,7 +10,7 @@ export default function BikeLaneMap() {
   const [data, setData] = useState<GeoJsonObject | null>(null);
 
   useEffect(() => {
-    const bbox = [32.78, 34.96, 32.83, 35.03]; // Haifa: S, W, N, E
+    const bbox = [29.3, 34.2, 33.3, 35.8];
     const overpassQuery = `
       [out:json][timeout:25];
       (
@@ -36,11 +36,16 @@ export default function BikeLaneMap() {
       .catch(console.error);
   }, []);
 
+  const israelBounds: [number, number][] = [
+    [29.3, 34.2],  // southwest
+    [33.3, 35.8],  // northeast
+  ]
+
   return (
     <MapContainer
-      center={[32.794, 34.9896]}        // <— lat/lng center
-      zoom={13}                        // <— zoom level
-      style={{ height: '100vh', width: '100%' }} // <— container style
+      bounds={israelBounds}
+      style={{ height: '100vh', width: '100%' }}
+      scrollWheelZoom
     >
       <TileLayer
         attribution="&copy; OpenStreetMap contributors" // <— attribution text
