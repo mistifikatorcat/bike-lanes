@@ -71,3 +71,5 @@ Open http://localhost:3000/bike-lanes in your browser to see the bike lanes over
 - This is an experimental prototype—expect rough edges around performance, error handling, and loading states.
 
 - For larger areas (e.g. entire countries), consider splitting requests or using server-side caching to avoid timeouts.
+
+  *This project is provided as-is for demo purposes*
