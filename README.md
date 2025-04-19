@@ -5,35 +5,35 @@ The project meant as a quick prototype to explore integrating Overpass API with 
 
 ## Features
 
--Fetches cycleway, highway=cycleway, and cycleway=track data for a given bounding box or named area via the Overpass API
+- Fetches cycleway, highway=cycleway, and cycleway=track data for a given bounding box or named area via the Overpass API
 
--Converts OSM JSON to GeoJSON using osmtogeojson
+- Converts OSM JSON to GeoJSON using osmtogeojson
 
--Renders the result on a Leaflet map using react-leaflet
+- Renders the result on a Leaflet map using react-leaflet
 
--Uses Next.js 13 App Router and client components
+- Uses Next.js 13 App Router and client components
 
-##Tech Stack
+## Tech Stack
 
--Next.js 13 (App Router)
+- Next.js 13 (App Router)
 
--TypeScript
+- TypeScript
 
--React
+- React
 
--Leaflet & react-leaflet
+- Leaflet & react-leaflet
 
--osmtogeojson
+- osmtogeojson
 
-##Getting Started
+## Getting Started
 
-###Prerequisites
+### Prerequisites
 
--Node.js (v16+ recommended)
+- Node.js (v16+ recommended)
 
--npm or yarn
+- npm or yarn
 
-###Installation
+### Installation
 
 Clone the repository:
 
@@ -60,14 +60,14 @@ yarn dev
 Open http://localhost:3000/bike-lanes in your browser to see the bike lanes overlay for the configured area.
 
 
-##Configuration
+## Configuration
 
--Bounding Box: Edit the bbox array in BikeLaneMap.tsx to change the geographic area.
+- Bounding Box: Edit the bbox array in BikeLaneMap.tsx to change the geographic area.
 
--Overpass Query: Tweak the Overpass API query in BikeLaneMap.tsx to fetch different OSM tags or use an area-based query.
+- Overpass Query: Tweak the Overpass API query in BikeLaneMap.tsx to fetch different OSM tags or use an area-based query.
 
-##Notes
+## Notes
 
--This is an experimental prototype—expect rough edges around performance, error handling, and loading states.
+- This is an experimental prototype—expect rough edges around performance, error handling, and loading states.
 
--For larger areas (e.g. entire countries), consider splitting requests or using server-side caching to avoid timeouts.
+- For larger areas (e.g. entire countries), consider splitting requests or using server-side caching to avoid timeouts.
