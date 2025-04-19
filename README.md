@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Bike Lanes Demo
 
-## Getting Started
+This is a small experiment based on Next.JS + TS that displays data from OpenStreetMap over a Leaflet map.
+The project meant as a quick prototype to explore integrating Overpass API with React-Leaflet in a modern Next.js app
 
-First, run the development server:
+## Features
 
-```bash
+-Fetches cycleway, highway=cycleway, and cycleway=track data for a given bounding box or named area via the Overpass API
+
+-Converts OSM JSON to GeoJSON using osmtogeojson
+
+-Renders the result on a Leaflet map using react-leaflet
+
+-Uses Next.js 13 App Router and client components
+
+##Tech Stack
+
+-Next.js 13 (App Router)
+
+-TypeScript
+
+-React
+
+-Leaflet & react-leaflet
+
+-osmtogeojson
+
+##Getting Started
+
+###Prerequisites
+
+-Node.js (v16+ recommended)
+
+-npm or yarn
+
+###Installation
+
+Clone the repository:
+
+```
+git clone https://github.com/your-username/bike-lanes.git
+cd bike-lanes
+```
+
+Install dependencies:
+```
+npm install
+# or
+yarn
+```
+Running the App
+
+Start the development server:
+
+```
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
+Open http://localhost:3000/bike-lanes in your browser to see the bike lanes overlay for the configured area.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+##Configuration
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+-Bounding Box: Edit the bbox array in BikeLaneMap.tsx to change the geographic area.
 
-## Learn More
+-Overpass Query: Tweak the Overpass API query in BikeLaneMap.tsx to fetch different OSM tags or use an area-based query.
 
-To learn more about Next.js, take a look at the following resources:
+##Notes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+-This is an experimental prototype—expect rough edges around performance, error handling, and loading states.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+-For larger areas (e.g. entire countries), consider splitting requests or using server-side caching to avoid timeouts.
